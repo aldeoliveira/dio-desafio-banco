@@ -1,5 +1,7 @@
 public class App {
     public static void main(String[] args) throws Exception {
+        Banco banco = new Banco("Meu Banco Digital");
+
         Cliente andre = new Cliente();
 
         Conta cc = new ContaCorrente(andre);
