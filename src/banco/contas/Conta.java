@@ -17,6 +17,22 @@ public abstract class Conta implements IConta {
         this.cliente = cliente;
     }
 
+    public int getAgencia() {
+        return agencia;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
     @Override
     public void sacar(double valor) {
         saldo -= valor;
@@ -31,18 +47,6 @@ public abstract class Conta implements IConta {
     public void transferir(IConta contaDestino, double valor) {
         this.sacar(valor);
         contaDestino.depositar(valor);
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public double getSaldo() {
-        return saldo;
     }
 
     protected void imprimirInfos() {

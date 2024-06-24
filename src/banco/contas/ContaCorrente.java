@@ -12,4 +12,12 @@ public class ContaCorrente extends Conta {
         System.out.println("=== Extrato Conta Corrente ===");
         super.imprimirInfos();
     }
+
+    @Override
+    public String toString() {
+        return String.format(
+            "ContaCorrente{agencia=%d, numero=%d, cliente='%s', saldo=%.2f}",
+            getAgencia(), getNumero(), getCliente().getNome(), getSaldo()
+        );
+    }
 }
