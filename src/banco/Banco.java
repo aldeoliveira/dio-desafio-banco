@@ -1,4 +1,8 @@
+package banco;
+
 import java.util.List;
+
+import banco.contas.Conta;
 
 public class Banco {
     private String nome;
