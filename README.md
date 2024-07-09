@@ -1,18 +1,45 @@
-## Getting Started
+# Desafio Banco
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Criação de um banco digital com Java e orientação a objetos.
 
-## Folder Structure
+## Motivação
 
-The workspace contains two folders by default, where:
+Esta alicação atende aos requisitos do Desafio de Projeto _Criando um Banco Digital com Java e Orientação de Objetos_ da DIO.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Stack
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Java 22.0.1.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Execução
 
-## Dependency Management
+Escolha uma pasta para o projeto e faça um clone do repositório:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```git clone git@github.com:aldeoliveira/dio-desafio-banco.git```
+
+## Funcionamento
+
+Fornece a classe Banco, que é composto por vários clientes e várias contas.
+
+```
+Banco meuBanco = new Banco("Nome do Banco");
+```
+
+Permite registrar clientes:
+
+```
+Cliente fulano = meuBanco.registrarCliente("Fulano de Tal");
+```
+
+Permite abrir uma conta corrente ou uma conta poupança. Para criar a conta, é preciso já ter instanciado um cliente, para que seja o titular da conta.
+
+```
+ContaCorrente conta1 = meuBanco.criarContaCorrente(fulano);
+```
+
+As contas possuem um número da agência, que é definido por padrão, e um número próprio da conta, que é definido de acordo com a ordem de instanciamento e nunca é repetido. É possível ver o saldo ```.getSaldo()```, fazer saques ```.sacar(valor)```, depósitos ```.depositar(valor)``` , ou transferências entre contas ```.transferir(valor, contaDestino)```.
+
+Além disso, também é possível imprimir todas as informações de uma conta com o método ```.imprimirInfos()```.
+
+<hr>
+
+__*Bom proveito!*__
